@@ -1,0 +1,38 @@
+package com.mj.bcalendar.activity;
+
+import android.os.Bundle;
+import android.view.WindowManager;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.mj.bcalendar.BuildConfig;
+import com.mj.bcalendar.R;
+
+public class LoginActivity extends AppCompatActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+			WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		setContentView(R.layout.activity_login);
+
+		setTxtVersion();
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Version 관련 기록하기
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	private TextView txtVersion;
+
+	/**
+	* Function Description
+	*  로그인 화면에서 현재 어플의 버전을 나타내기 위한  함수
+	**/
+	private void setTxtVersion(){
+		txtVersion = findViewById(R.id.txtVersion);
+		txtVersion.setText(txtVersion.getText() + " " + BuildConfig.VERSION_NAME + " ");
+	}
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Version 관련 기록하기 마지막 부분
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}
