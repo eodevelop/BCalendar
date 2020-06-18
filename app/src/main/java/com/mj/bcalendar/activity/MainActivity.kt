@@ -3,8 +3,6 @@ package com.mj.bcalendar.activity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.CalendarView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
@@ -42,9 +40,12 @@ class MainActivity : AppCompatActivity() {
      * 메인 화면에서 발생할 이벤트 관련 리스너 모음
      */
     private fun setListener() { //달력에서 날짜 변경 시 발생할 이벤트 리스너
+
+        //캘린더 날짜 클릭 리스너
         calendarView!!.setOnDateChangeListener(CalendarView.OnDateChangeListener { view, year, month, dayOfMonth ->
-            Toast.makeText(this@MainActivity, "Test", Toast.LENGTH_SHORT).show()
+            viewPagerMain!!.currentItem = 0
         })
+
         //화면의 ViewPager 위젯이 연동되는 TabLayout 설정
         viewPagerMain!!.addOnPageChangeListener(TabLayoutOnPageChangeListener(tlMain))
         // 탭 선택시 발생할 리스너

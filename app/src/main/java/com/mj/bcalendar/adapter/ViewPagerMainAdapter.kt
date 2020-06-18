@@ -22,5 +22,4 @@ class ViewPagerMainAdapter(manager: FragmentManager?, private val mPageCount: In
     override fun getCount(): Int {
         return mPageCount
     }
-
 }
