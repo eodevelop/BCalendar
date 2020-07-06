@@ -4,8 +4,14 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".todo">
-    <TextView
-            android:text="TODO"
+    <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="473dp" android:id="@+id/textView2" android:textSize="36sp"/>
+            android:layout_height="match_parent">
+        <EditText
+                android:layout_width="360dp"
+                android:layout_height="371dp"
+                android:inputType="time"
+                android:ems="10"
+                android:id="@+id/editText" android:layout_weight="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
 </FrameLayout>
